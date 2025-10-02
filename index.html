@@ -26,7 +26,7 @@
                 </h1>
                 <div class="dabbyeon-desc">
                     <span class="dabbyeon-keywords">keopi &bull; eumsik &bull; sarang</span>
-                    <div class="dabbyeon-tagline">because you deserve it.</div>
+                    <div class="dabbyeon-tagline">because you deserve it</div>
                 </div>
                 <div class="welcome-box">
                     <h2>Welcome to Dabbyeon</h2>
@@ -48,11 +48,79 @@
                             Discover authentic Korean flavors crafted with love and served fresh every day.<br>
                             Discover authentic Korean flavors crafted with love and served fresh every day.
                         </p>
-                        <a href="#" class="view-menu-btn">VIEW MENU</a>
+                        <a href="#menu-section" class="view-menu-btn">VIEW MENU</a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+    <section class="menu-gallery" id="menu-section">
+        <h2 class="menu-gallery-title">Our Menu</h2>
+        <div class="menu-gallery-list">
+            <a href="menu-item1.html" class="menu-gallery-item">
+                <img src="/551004361_1309560740287289_1151725091260157652_n.jpg" alt="Menu Item 1" />
+                <span>Menu Item 1</span>
+            </a>
+            <a href="menu-item2.html" class="menu-gallery-item">
+                <img src="/552935463_3394718680686664_1172339801655443551_n.jpg" alt="Menu Item 2" />
+                <span>Menu Item 2</span>
+            </a>
+            <a href="menu-item3.html" class="menu-gallery-item">
+                <img src="/553057822_24728276100161093_153045740620855923_n.jpg" alt="Menu Item 3" />
+                <span>Menu Item 3</span>
+            </a>
+            <a href="menu-item1.html" class="menu-gallery-item">
+                <img src="/553126321_1476178483618938_1683745485220380109_n.jpg" alt="Menu Item 1" />
+                <span>Menu Item 1</span>
+            </a>
+            <a href="menu-item2.html" class="menu-gallery-item">
+                <img src="/553320750_1693245648025372_8033473738845503966_n.jpg" alt="Menu Item 2" />
+                <span>Menu Item 2</span>
+            </a>
+            <a href="menu-item3.html" class="menu-gallery-item">
+                <img src="/553377175_1161812149166150_599271873800508178_n.jpg" alt="Menu Item 3" />
+                <span>Menu Item 3</span>
+            </a>
+            <a href="menu-item1.html" class="menu-gallery-item">
+                <img src="/553625096_1737965793589507_8184494885637265026_n.jpg" alt="Menu Item 1" />
+                <span>Menu Item 1</span>
+            </a>
+            <a href="menu-item2.html" class="menu-gallery-item">
+                <img src="/553680460_2204752833370838_5134213508307780451_n.jpg" alt="Menu Item 2" />
+                <span>Menu Item 2</span>
+            </a>
+            <!-- Add more items as needed -->
+        </div>
+    </section>
+    <!-- Menu Overlay Modal -->
+    <div id="menu-overlay" class="menu-overlay">
+        <div class="menu-overlay-content">
+            <span id="menu-overlay-close" class="menu-overlay-close">&times;</span>
+            <img id="menu-overlay-img" src="" alt="Menu Large" />
+            <div id="menu-overlay-label" class="menu-overlay-label"></div>
+        </div>
+    </div>
+    <script>
+    // Overlay logic
+    document.querySelectorAll('.menu-gallery-item').forEach(function(item) {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            var img = item.querySelector('img');
+            var label = item.querySelector('span').textContent;
+            document.getElementById('menu-overlay-img').src = img.src;
+            document.getElementById('menu-overlay-img').alt = img.alt;
+            document.getElementById('menu-overlay-label').textContent = label;
+            document.getElementById('menu-overlay').style.display = 'flex';
+        });
+    });
+    document.getElementById('menu-overlay-close').onclick = function() {
+        document.getElementById('menu-overlay').style.display = 'none';
+    };
+    document.getElementById('menu-overlay').onclick = function(e) {
+        if (e.target === this) {
+            this.style.display = 'none';
+        }
+    };
+    </script>
 </body>
 </html>
